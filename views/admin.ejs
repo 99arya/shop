@@ -1,0 +1,173 @@
+
+<!--  //=========================================================================================================================                                    -->
+<!-- //  DESIGNED AND DEVELOPED BY "SUMIT ARYA" : "<ARYASUMIT145@GMAIL.COM>" "WWW.MEGHAPATH.COM" "WWW.SUMITARYA.TK"-->
+<!--//===========================================================================================================================-->
+
+
+
+<% include ./partials/header %>
+    <section class="page-title parallax">
+      <div data-parallax="scroll" data-image-src="images/bg/21.jpg" class="parallax-bg"></div>
+      <div class="parallax-overlay">
+        <div class="centrize">
+          <div class="v-center">
+            <div class="container">
+              <div class="title center">
+                <h1 class="upper">ADMIN<span class="red-dot"></span></h1>
+                <h4>Add product</h4>
+                <hr>
+              </div>
+            </div>
+            <!-- end of container-->
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+      
+        
+        <div class="section-content">
+          <div class="row">
+            <div  id="alertMsg" class="col-md-8 col-md-offset-2">
+              
+              
+              
+              </div>
+          </div>
+          <!-- end of row-->
+        </div>
+       
+    
+    <section>
+      <div class="container">
+        <div class="title center">
+          <h2>Add a Category<span class="red-dot"></span></h2>
+          <hr>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="contact-form">
+                <form id="contact-form" >
+                  
+                  
+                  
+                  <div class="form-group">
+                    <input   id="categoryName" type="text" name="name" placeholder="Category Name" data-required="true" class="form-control">
+                  </div>
+                  
+                  
+                
+                  <div class="form-group text-center">
+                    <button  type="button" id = "addCategory"  class="btn btn-color">Add Category</button>
+                  </div>
+                </form>
+              </div>
+              <!-- end of contact form-->
+            </div>
+          </div>
+          <!-- end of row-->
+        </div>
+        <!-- end of section content-->
+      </div>
+    </section>
+    
+    <section>
+      <div class="container">
+        <div class="title center">
+          <h4 class="upper">Now,</h4>
+          <h2>Let's add a product<span class="red-dot"></span></h2>
+          <hr>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="contact-form">
+                <form id="contact-form">
+                  
+                  <div class="form-group">
+                <div class="form-select">
+                  <select id="category" name="category"  class="form-control">
+                    <option selected="selected" value="">Select Category</option>
+                    
+                  </select>
+                </div>
+              </div>
+                  
+                  <div class="form-group">
+                    <input id="name" type="text" placeholder="Product Name" data-required="true" class="form-control">
+                  </div>
+               
+                  
+                  <div class="form-group">
+                    <input id="maxPrice" type="text" placeholder="Max Price" data-required="true" class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="minPrice" type="text" placeholder="Min Price" data-required="true" class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="shortDetail" type="text" placeholder="Short Detail" data-required="true" class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="longDetail" type="text" placeholder="Long Detail" data-required="true" class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="pLength" type="text" placeholder="Length"  class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="pWidth" type="text" placeholder="Width"  class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="pWeight" type="text" placeholder="Weight"  class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="sku" type="text" placeholder="SKU"  class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="image1" type="text" placeholder="Image1"  class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="image2" type="text" placeholder="Image2"  class="form-control">
+                  </div>
+               
+                  <div class="form-group">
+                    <input id="image3" type="text" placeholder="Image3"  class="form-control">
+                  </div>
+               
+                  
+                  
+                  <div class="form-group text-center">
+                    <button type="button" id = "addProduct"  class="btn btn-color">Add Product</button>
+                  </div>
+                </form>
+              </div>
+              <!-- end of contact form-->
+            </div>
+          </div>
+          <!-- end of row-->
+        </div>
+        <!-- end of section content-->
+      </div>
+    </section>
+    
+
+    <% include ./partials/footer %>
+             	<script src="../js/mainui.js"></script>
+
+    
+    
+<!--  //=========================================================================================================================                                    -->
+<!-- //  DESIGNED AND DEVELOPED BY "SUMIT ARYA" : "<ARYASUMIT145@GMAIL.COM>" "WWW.MEGHAPATH.COM" "WWW.SUMITARYA.TK"-->
+<!--//===========================================================================================================================-->

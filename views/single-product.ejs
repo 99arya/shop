@@ -1,0 +1,198 @@
+
+<!--  //=========================================================================================================================                                    -->
+<!-- //  DESIGNED AND DEVELOPED BY "SUMIT ARYA" : "<ARYASUMIT145@GMAIL.COM>" "WWW.MEGHAPATH.COM" "WWW.SUMITARYA.TK"-->
+<!--//===========================================================================================================================-->
+
+
+
+<% include ./partials/header %>
+
+  <div class="section-content">
+          <div class="row">
+            <div  id="alertMsg" class="col-md-8 col-md-offset-2">
+              
+              
+              
+              </div>
+          </div>
+          <!-- end of row-->
+        </div>
+
+    <section>
+      <div class="container">
+        <div class="single-product-details">
+          <div class="row">
+            <div class="col-md-6">
+              <div data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true}" class="flexslider nav-inside control-nav-dark">
+                <ul class="slides">
+                  <li>
+                    <img src="<%= product.image1 %>" alt="">
+                  </li>
+                  <li>
+                    <img src="<%= product.image2 %>" alt="">
+                  </li>
+                  <li>
+                    <img src="<%= product.image3 %>" alt="">
+                  </li>
+                  <li>
+                    <img src="<%= product.image4 %>" alt="">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+              <div class="title mt-0">
+                <h2><%= product.name %><span class="red-dot"></span></h2>
+                <p class="m-0"><%= product.catName %></p>
+                <span style="display:none" id = "prId" ><%= product._id %></span>
+              </div>
+              <div class="single-product-price" style="padding-left: 1em;">
+                <div class="row">
+                  
+                    <h3><del>Rs. <%= product.maxPrice %></del><span>Rs. <%= product.minPrice %></span></h3>
+                 
+                  
+                  
+                </div>
+              </div>
+              <div class="single-product-desc">
+                <div class="col-xs-6 text-right">
+                  <span class="rating-stars">
+                                    <i class="ti-star full"></i><i class="ti-star full"></i><i class="ti-star full"></i><i class="ti-star full"></i><i class="ti-star"></i><span class="hidden-xs"><%=product.reviews.length%>  Review(s)</span>
+                                    </span>  
+                  </div><br>
+                
+              </div>
+              <div class="single-product-price">
+               
+                <p><%= product.shortDetail %></p>
+              </div>
+              <div class="single-product-add">
+                <form action="#" class="inline-form">
+                  <div class="input-group">
+                    <input type="number" placeholder="QTY" value="1" min="1" class="form-control"><span class="input-group-btn"><button type="button" class="btn btn-color">Add to Cart<i class="ti-bag"></i></button></span>
+                  </div>
+                </form>
+              </div>
+              <div class="single-product-list">
+                <ul>
+                  <li><span>Category:</span><a href="../category/<%= product.catid %>"><%= product.catName %></a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- end of row-->
+        </div>
+        <div class="product-tabs">
+          <ul role="tablist" class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#first-tab" role="tab" data-toggle="tab">Description</a>
+            </li>
+            <li role="presentation"><a href="#second-tab" role="tab" data-toggle="tab">Size</a>
+            </li>
+            <li role="presentation"><a href="#third-tab" role="tab" data-toggle="tab">Reviews (<%=product.reviews.length%>)</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div id="first-tab" role="tabpanel" class="tab-pane active">
+            <p><%= product.longDetail %></p>
+            </div>
+            <div id="second-tab" role="tabpanel" class="tab-pane">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th class="upper">Length (cm)</th>
+                    <th class="upper">Width (cm)</th>
+                    <th class="upper">Weight (g)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><%= product.pLength %></td>
+                    <td><%= product.pWidth %></td>
+                    <td><%= product.pWeight %></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <div id="third-tab" role="tabpanel" class="tab-pane">
+              <div id="comments">
+                <ul class="comments-list">
+                  
+                <% product.reviews.forEach(function(review){ %>
+
+                  
+                  <li class="rating">
+                    <h5 class="upper"><%= review.name %>- <span class="rating-stars">
+                      <span id="<%= review.rn %>" style="display:none"><%= review.name %></span>
+                  
+                      
+                      <i class="ti-star full"></i>
+                      <i class="ti-star full"></i>
+                      <i class="ti-star full"></i>
+                      <i class="ti-star full"></i>
+                      <i class="ti-star"></i>
+                      
+                      
+                      </span></h5>
+                      <span class="comment-date"><%= review.created %></span>
+                    <p><%= review.comment %></p>
+                  </li>
+                  
+                   <% }) %> 
+                  
+                
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+          <div id="respond"><br><hr>
+                <h2 class="upper">Leave a review</h2>
+                <div class="comment-respond">
+                  <form class="comment-form">
+                    <div class="form-double">
+                      <div class="form-group">
+                        <input id="author" type="text" placeholder="Name" class="form-control">
+                      </div>
+                      <div class="form-group last">
+                        <input id="email" type="text" placeholder="Email" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="form-select">
+                        <select id="star" class="form-control">
+                          <option value="" selected="selected">Chose a rating</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <textarea id="comment" placeholder="Comment" class="form-control"></textarea>
+                    </div>
+                    <div class="form-submit text-right">
+                      <button type="button" id="sendReview" class="btn btn-color-out">Post Comment</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+          
+        </div>
+        
+      </div>
+    </section>
+    
+    <% include ./partials/footer %>
+    
+        <script src="../js/review.js"></script>
+
+    
+<!--  //=========================================================================================================================                                    -->
+<!-- //  DESIGNED AND DEVELOPED BY "SUMIT ARYA" : "<ARYASUMIT145@GMAIL.COM>" "WWW.MEGHAPATH.COM" "WWW.SUMITARYA.TK"-->
+<!--//===========================================================================================================================-->

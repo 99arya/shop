@@ -1,0 +1,248 @@
+<!--  //=========================================================================================================================                                    -->
+<!-- //  DESIGNED AND DEVELOPED BY "SUMIT ARYA" : "<ARYASUMIT145@GMAIL.COM>" "WWW.MEGHAPATH.COM" "WWW.SUMITARYA.TK"-->
+<!--//===========================================================================================================================-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>MeghaPath | Hasten your business by cloud</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/bundle.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Halant:300,400" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Preloader-->
+    <div id="loader">
+      <div class="centrize">
+        <div class="v-center">
+          <div id="mask">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Preloader-->
+    <!-- Navigation Bar-->
+    <header id="topnav">
+      <div class="container">
+        <!-- Logo container-->
+        <div class="logo">
+          <a href="/">
+            <img src="../images/logo-ww.png" alt="" class="logo-light">
+            <img src="../images/logo-b.png" alt="" class="logo-dark">
+          </a>
+        </div>
+        <!-- End Logo container-->
+        <div class="menu-extras">
+          <div class="menu-item">
+            <!-- Shopping cart-->
+            <div class="cart">
+              <a href="#">
+                <i class="ti-bag"></i><span class="cart-number">2</span>
+              </a>
+              <div class="shopping-cart">
+                <div class="shopping-cart-info">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <h6 class="upper">Your Cart</h6>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <h6 class="upper">$399.99</h6>
+                    </div>
+                  </div>
+                  <!-- end of row-->
+                </div>
+                <ul class="nav product-list">
+                  <li>
+                    <div class="product-thumbnail">
+                      <img src="../images/shop/2.jpg" alt="">
+                    </div>
+                    <div class="product-summary">
+                      <a href="#">Premium Suit Blazer</a><span>$199.99</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-thumbnail">
+                      <img src="../images/shop/5.jpg" alt="">
+                    </div>
+                    <div class="product-summary">
+                      <a href="#">Reiss Vara Tailored Blazer</a><span>$199.99</span>
+                    </div>
+                  </li>
+                </ul>
+                <p><a href="#" class="btn btn-color btn-block btn-sm">Checkout</a>
+                </p>
+              </div>
+            </div>
+            <!-- End shopping cart-->
+          </div>
+          <div class="menu-item">
+            <!-- Search Form-->
+            <div class="search">
+              <a href="#">
+                <i class="ti-search"></i>
+              </a>
+              <div class="search-form">
+                <form action="#" class="inline-form">
+                  <div class="input-group">
+                    <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn"><button type="button" class="btn btn-color"><span><i class="ti-search"></i></span>
+                    </button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- End search form-->
+          </div>
+          <div class="menu-item">
+            <!-- Mobile menu toggle-->
+            <a class="navbar-toggle">
+              <div class="lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </a>
+            <!-- End mobile menu toggle-->
+          </div>
+        </div>
+        <div id="navigation">
+          <!-- Navigation Menu-->
+          <ul class="navigation-menu">
+            <li class="has-submenu">
+              <a href="/categories">Products</a>
+              <ul class="submenu megamenu">
+                
+                
+                
+                    <% cats.forEach(function(cat){ %>
+                
+                <li>
+                  <ul>
+                    <li>
+                      <span onclick="window.location.href='/category/<%= cat._id %>'"><%=cat.name%></span>
+                      <!--<a href="/category/<% cat._id %>"><span><%=cat.name%></span></a>-->
+                    </li>
+                    
+                     
+                    <% products.forEach(function(product){ %>
+                    
+                       <% if(product.catName ==  cat.name ){ %>
+
+        
+                    
+                    
+                    <li>
+                      <a href="/product/<%= product._id %>"><%= product.name  %></a>
+                    </li>
+                    
+                        <% } %>
+                  <% }); %>
+                  
+                  
+                    
+                    
+                    
+                    
+                  </ul>
+                </li>
+                
+                
+                <% }) %>
+                
+                
+                
+                
+                
+                
+                
+                
+               
+                
+                
+                
+                
+              </ul>
+            </li>
+            
+            
+            
+           
+            
+            
+            
+            
+         
+            <li class="has-submenu">
+              <a href="#">Shop</a>
+              <ul class="submenu">
+                <li class="has-submenu">
+                  <a href="#">Shop Layout</a>
+                  <ul class="submenu">
+                    <li>
+                      <a href="shop-2col.html">2 Columns</a>
+                    </li>
+                    <li>
+                      <a href="shop-3col.html">3 Columns</a>
+                    </li>
+                    <li>
+                      <a href="shop-4col.html">4 Columns</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="shop-single.html">Single Product</a>
+                </li>
+                <li>
+                  <a href="shop-cart.html">Cart</a>
+                </li>
+                <li>
+                  <a href="shop-checkout.html">Checkout</a>
+                </li>
+              </ul>
+            </li>
+            
+            
+             <li>
+              <a href="/about">About</a>
+              
+            </li>
+            
+             <li>
+              <a href="/contact">Contact</a>
+                
+            </li>
+            
+            <li>
+              <a href="/login">Login/Sign-Up</a>
+                
+            </li>
+            
+            
+          </ul>
+          <!-- End navigation menu        -->
+        </div>
+      </div>
+    </header>
+    <!-- End Navigation Bar-->
+    
+    
+<!--  //=========================================================================================================================                                    -->
+<!-- //  DESIGNED AND DEVELOPED BY "SUMIT ARYA" : "<ARYASUMIT145@GMAIL.COM>" "WWW.MEGHAPATH.COM" "WWW.SUMITARYA.TK"-->
+<!--//===========================================================================================================================-->
